@@ -8,7 +8,6 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -20,7 +19,6 @@
             border-radius: 4px;
         }
 
-        /* Animations */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
@@ -41,8 +39,7 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
         }
-        
-        /* Canvas Background */
+
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -98,7 +95,6 @@
             transform: rotateY(180deg);
         }
 
-        /* Confetti styles from the added test */
         .confetti {
             position: fixed;
             top: 0;
@@ -114,11 +110,11 @@
             }
         }
 
-        /* Color swatch */
         .color-swatch {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             border: 3px solid rgba(255,255,255,0.2);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
         }
