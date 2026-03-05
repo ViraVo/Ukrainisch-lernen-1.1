@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websetie Übung 4</title>
+
+    <script>
+function startQuiz() {
+    const questions = [
+      { q: "Was bedeutet 'Привіт' (Pryvit)?", a: ["Danke", "Bitte", "Hallo", "Guten Abend"], correct: 2 },
+      { q: "Wie sagt man 'Danke' auf Ukrainisch?", a: ["Будь ласка", "Дякую", "Добрий день", "Пробач"], correct: 1 },
+      { q: "Was heißt 'До побачення' (Do pobachennya)?", a: ["Hallo", "Guten Morgen", "Auf Wiedersehen", "Danke"], correct: 2 },
+      { q: "Wie sagt man 'Bitte' auf Ukrainisch?", a: ["Пробач", "Доброго дня", "Будь ласка", "Hi"], correct: 2 },
+      { q: "Was bedeutet 'Кіт' (kit)?", a: ["Hund", "Katze", "Pferd", "Vogel"], correct: 1 },
+      { q: "Was heißt 'Молоко' (moloko)?", a: ["Milch", "Saft", "Käse", "Wasser"], correct: 0 },
+      { q: "Was bedeutet 'Добрий ранок' (dobryj ranok)?", a: ["Gute Nacht", "Guten Morgen", "Guten Abend", "Hallo"], correct: 1 },
+      { q: "Wie sagt man 'Ich heiße...' auf Ukrainisch?", a: ["Я живу…", "Мене звати…", "Я маю…", "Я знаю…"], correct: 1 }    
+    ];
+    let score = 0;
+    questions.forEach((qa, i) => {
+      
+      const user = prompt(`Frage ${i+1}/8: ${qa.q}\n\n${qa.a.map((x, idx) => `${idx+1}. ${x}`).join("\n")}`);
+      if (parseInt(user) === qa.correct + 1) score++;
+    });
+ 
+    if (score === 8) {
+      triggerVictory(`Du hast alles richtig!`);
+    } else {
+      alert(`Du hast ${score} von 8 Fragen richtig. Versuch es nochmal!`);
+    }
+  }
+ 
+  function triggerVictory() {
+    const emojis = ["🎉", "🏆", "🎊", "💥", "✨", "🌟"];
+    for (let i = 0; i < 80; i++) {
+      const node = document.createElement("div");
+      node.className = "confetti";
+      node.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      node.style.left = Math.random() * 100 + "vw";
+      node.style.animationDelay = Math.random() * 0.8 + "s";
+      document.body.appendChild(node);
+      setTimeout(() => node.remove(), 3000);
+    }
+    setTimeout(() => alert(""), 300);
+  }
+</script>
+    
+</body>
+</html>
